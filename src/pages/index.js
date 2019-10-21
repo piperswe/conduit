@@ -4,14 +4,18 @@ import { graphql } from 'gatsby';
 import classNames from 'classnames';
 import Img from 'gatsby-image';
 
-import styles from './index.module.css';
+import styles from './index.module.scss';
 
 export const query = graphql`
   query GetLogo {
     file(relativePath: { eq: "images/logo.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 960, traceSVG: {
+          color: "#594E52",
+          optCurve: false,
+          turdSize: 1
+        }) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }

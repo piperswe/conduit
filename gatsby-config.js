@@ -4,7 +4,16 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-manifest',
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Conduit Implementations',
+        short_name: 'Conduit Impl.',
+        start_url: '/',
+        theme_color: '#594E52',
+      },
+    },
     'gatsby-plugin-nprogress',
     {
       resolve: 'gatsby-transformer-remark',
