@@ -1,7 +1,0 @@
-/
-  Link: </logo.svg>; rel=preload; as=image
-  Link: </style.css>; rel=preload; as=style
-  Link: <https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.min.css>; rel=preload; as=style
-
-/style.css
-  Link: <https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.min.css>; rel=preload; as=style
