@@ -1,5 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://conduitim.pl',
+  },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
