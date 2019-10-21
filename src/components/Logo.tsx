@@ -17,7 +17,6 @@ export default function Logo(props) {
       }
     }
   `);
-  console.log(data);
   return (
     <Img
       fluid={data.file.childImageSharp.fluid}

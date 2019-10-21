@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 import classNames from 'classnames';
 
-import styles from './index.module.scss';
+import * as styles from './index.module.scss';
 import Logo from '../components/Logo';
 
 export default function IndexPage({ data }) {

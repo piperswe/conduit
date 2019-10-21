@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'gatsby';
 
-import styles from './404.module.scss';
+import * as styles from './404.module.scss';
 import Logo from '../components/Logo';
 
 export default function NotFoundPage({ data }) {
@@ -15,7 +15,7 @@ export default function NotFoundPage({ data }) {
 
       <div className={styles.body}>
         <Link to="/">
-          <Logo className={styles.img} />
+          <Logo />
         </Link>
         <h1>Not found.</h1>
         <p>
