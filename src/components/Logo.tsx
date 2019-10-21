@@ -18,5 +18,11 @@ export default function Logo(props) {
     }
   `);
   console.log(data);
-  return <Img fluid={data.file.childImageSharp.fluid} {...props} />;
+  return (
+    <Img
+      fluid={data.file.childImageSharp.fluid}
+      alt="Conduit Implementations"
+      {...props}
+    />
+  );
 }
