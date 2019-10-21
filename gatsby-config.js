@@ -12,6 +12,8 @@ module.exports = {
         short_name: 'Conduit Impl.',
         start_url: '/',
         theme_color: '#594E52',
+        display: 'minimal-ui',
+        icon: 'src/data/images/icon.png',
       },
     },
     'gatsby-plugin-nprogress',
