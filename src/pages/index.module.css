@@ -14,9 +14,10 @@
 
 .body {
   margin: 20px;
+  width: 100%;
 }
 
-.body .img {
+.body .img, .body a {
   width: 100%;
 }
 
