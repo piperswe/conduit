@@ -1,6 +1,9 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import classNames from 'classnames';
+
+import * as styles from './Logo.module.scss';
 
 export default function Logo(props) {
   const data = useStaticQuery(graphql`
@@ -18,10 +21,15 @@ export default function Logo(props) {
     }
   `);
   return (
-    <Img
-      fluid={data.file.childImageSharp.fluid}
-      alt="Conduit Implementations"
-      {...props}
-    />
+    <div className={classNames('row', styles.logo)}>
+      <div className="col"></div>
+      <Img
+        fluid={data.file.childImageSharp.fluid}
+        alt="Conduit Implementations"
+        className={classNames('col-8', props.classNames)}
+        {...props}
+      />
+      <div className="col"></div>
+    </div>
   );
 }

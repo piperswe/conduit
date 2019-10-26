@@ -6,7 +6,9 @@ import Img from 'gatsby-image';
 
 import * as styles from './index.module.scss';
 import * as pageStyles from '../components/Page.module.scss';
+import BasePage from '../components/BasePage';
 import Logo from '../components/Logo';
+import Footer from '../components/Footer';
 
 export const query = graphql`
   query {
@@ -28,12 +30,7 @@ export const query = graphql`
 
 export default function IndexPage({ data }) {
   return (
-    <div className={classNames('container', pageStyles.page, 'h-card')}>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Conduit Implementations</title>
-        <link rel="canonical" href="https://conduitim.pl/" />
-      </Helmet>
+    <BasePage canonicalUrl="/" className="h-card">
       <a className={classNames('u-url', 'u-uid')} href="https://conduitim.pl">
         <Logo />
       </a>
@@ -54,22 +51,7 @@ export default function IndexPage({ data }) {
         </Link>
         <div className="col-3"></div>
       </div>
-      <footer className={pageStyles.addrBlock}>
-        <a className="u-email" href="mailto:contact@conduitim.pl">
-          contact@conduitim.pl
-        </a>{' '}
-        |{' '}
-        <address className={classNames('p-adr', 'h-adr')}>
-          <span className="p-street-address">380 Hamilton Ave #252</span>,{' '}
-          <span className="p-locality">Palo Alto</span>,{' '}
-          <span className="p-region">CA</span>{' '}
-          <span className="p-postal-code">94301</span>
-        </address>{' '}
-        |{' '}
-        <a className="p-tel" href="tel:1-650-308-4367">
-          +1 (650) 308-4367
-        </a>
-      </footer>
-    </div>
+      <Footer includeHCard />
+    </BasePage>
   );
 }
