@@ -1,6 +1,9 @@
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+
 .addrBlock {
   margin-top: 20px;
-  color: #888888;
+  color: gray("500");
   font-size: 70%;
   font-weight: lighter;
 
@@ -9,12 +12,11 @@
   }
 
   a {
-    color: #888888;
+    color: inherit;
     font-weight: normal;
   }
 
   a:hover {
-    color: #555555;
-    font-weight: bold;
+    color: darken(gray("500"), 15%);
   }
 }

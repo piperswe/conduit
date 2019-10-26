@@ -1,7 +1,6 @@
-$body-bg: #eee;
-$theme-colors: (
-  "primary": #594E52
-);
+$primary: #594E52;
+
+$body-bg: gray("100");
 $container-max-widths: (
   sm: 350px,
   md: 500px,
@@ -9,7 +8,14 @@ $container-max-widths: (
   xl: 550px
 ) !default;
 
-@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap/scss/_functions';
+@import 'bootstrap/scss/_variables';
+@import 'bootstrap/scss/_mixins';
+
+@import 'bootstrap/scss/_reboot';
+@import 'bootstrap/scss/_type';
+@import 'bootstrap/scss/_grid';
+@import 'bootstrap/scss/_buttons';
 
 html, body, #___gatsby, #gatsby-focus-wrapper {
   width: 100%;
@@ -19,8 +25,4 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 
 a {
   font-weight: bold;
-}
-
-a:hover {
-  font-weight: bolder;
 }
