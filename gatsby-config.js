@@ -3,6 +3,7 @@ module.exports = {
     siteUrl: 'https://conduitim.pl',
   },
   plugins: [
+    'gatsby-plugin-netlify-cache',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
