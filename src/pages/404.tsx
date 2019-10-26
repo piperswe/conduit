@@ -13,6 +13,7 @@ export const query = graphql`
         fluid(
           maxWidth: 3840
           maxHeight: 960
+          srcSetBreakpoints: [640, 750, 1125, 1242, 1920, 2560, 3840]
           traceSVG: { color: "#594E52", optCurve: false, turdSize: 1 }
         ) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
