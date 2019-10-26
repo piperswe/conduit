@@ -1,7 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Helmet } from 'react-helmet';
-import { Link } from 'gatsby';
-import classNames from 'classnames';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import Logo from './Logo';
 import Footer from './Footer';
@@ -16,9 +14,9 @@ export interface PageProps {
 export default function Page({ title, canonicalUrl, children }: PageProps) {
   return (
     <BasePage title={title} canonicalUrl={canonicalUrl}>
-      <Link to="/">
+      <AniLink fade to="/">
         <Logo />
-      </Link>
+      </AniLink>
       {children}
       <Footer />
     </BasePage>

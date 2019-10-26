@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import classNames from 'classnames';
 import Img from 'gatsby-image';
 
@@ -37,7 +37,8 @@ export default function IndexPage({ data }) {
       <Img fluid={data.file.childImageSharp.fluid} className={styles.cover} />
       <div className="row">
         <div className="col-3"></div>
-        <Link
+        <AniLink
+          fade
           to="/services"
           className={classNames(
             'btn',
@@ -48,7 +49,7 @@ export default function IndexPage({ data }) {
           )}
         >
           Services
-        </Link>
+        </AniLink>
         <div className="col-3"></div>
       </div>
       <Footer includeHCard />
