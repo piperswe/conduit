@@ -2,13 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import classNames from 'classnames';
-import Img from 'gatsby-image';
 
 import * as styles from './index.module.scss';
-import * as pageStyles from '../components/Page.module.scss';
 import BasePage from '../components/BasePage';
 import Logo from '../components/Logo';
 import Footer from '../components/Footer';
+import Cover from '../components/Cover';
 
 export const query = graphql`
   query {
@@ -34,7 +33,10 @@ export default function IndexPage({ data }) {
       <a className={classNames('u-url', 'u-uid')} href="https://conduitim.pl">
         <Logo />
       </a>
-      <Img fluid={data.file.childImageSharp.fluid} className={styles.cover} />
+      <Cover
+        fluid={data.file.childImageSharp.fluid}
+        alt="San Francisco's skyline"
+      />
       <div className="row">
         <div className="col-3"></div>
         <AniLink

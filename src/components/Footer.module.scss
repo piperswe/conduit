@@ -3,7 +3,7 @@
 
 .addrBlock {
   margin-top: 20px;
-  color: gray("500");
+  color: gray('500');
   font-size: 70%;
   font-weight: lighter;
 
@@ -17,6 +17,6 @@
   }
 
   a:hover {
-    color: darken(gray("500"), 15%);
+    color: darken(gray('500'), 15%);
   }
 }

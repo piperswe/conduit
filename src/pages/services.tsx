@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 
-import * as styles from './services.module.scss';
 import Page from '../components/Page';
+import Cover from '../components/Cover';
 
 export const query = graphql`
   query {
@@ -24,7 +23,10 @@ export const query = graphql`
 export default function ServicesPage({ data }) {
   return (
     <Page title="Services" canonicalUrl="/services">
-      <Img fluid={data.file.childImageSharp.fluid} className={styles.cover} />
+      <Cover
+        fluid={data.file.childImageSharp.fluid}
+        alt="A code snippet displayed on a computer monitor"
+      />
       <p>
         We offer a variety of software consulting services. If you are
         interested in hiring Conduit or would like more information, please

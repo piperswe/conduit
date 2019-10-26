@@ -12,7 +12,12 @@ export interface BasePageProps {
   className?: string;
 }
 
-export default function BasePage({ title, canonicalUrl, children, className }: BasePageProps) {
+export default function BasePage({
+  title,
+  canonicalUrl,
+  children,
+  className,
+}: BasePageProps) {
   return (
     <div className={classNames('container', styles.page, className)}>
       <Helmet>
