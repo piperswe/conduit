@@ -1,1 +1,24 @@
-@import '../styles/vertical.scss';
+.page {
+  text-align: center;
+}
+
+.addrBlock {
+  margin-top: 20px;
+  color: #888888;
+  font-size: 70%;
+  font-weight: lighter;
+
+  address {
+    display: inline;
+  }
+
+  a {
+    color: #888888;
+    font-weight: normal;
+  }
+
+  a:hover {
+    color: #555555;
+    font-weight: bold;
+  }
+}
