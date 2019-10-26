@@ -25,10 +25,7 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [
-          'gatsby-remark-prismjs',
-          'gatsby-remark-images',
-        ],
+        plugins: ['gatsby-remark-prismjs', 'gatsby-remark-images'],
       },
     },
 
@@ -36,5 +33,13 @@ module.exports = {
     'gatsby-plugin-netlify',
 
     { resolve: 'gatsby-source-filesystem', options: { path: './src/data/' } },
+
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'G-9Z7QF05KXG',
+        head: true,
+      },
+    },
   ],
 };
