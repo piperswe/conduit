@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Page from '../components/Page';
 import Cover from '../components/Cover';
+import Subheader from '../components/Subheader';
 
 export const query = graphql`
   query {
@@ -29,11 +30,15 @@ export default function ServicesPage({ data }) {
         alt="A code snippet displayed on a computer monitor"
       />
       <p>
-        We offer a variety of software consulting services. If you are
-        interested in hiring Conduit or would like more information, please
-        contact us at{' '}
-        <a href="mailto:contact@conduitim.pl">contact@conduitim.pl</a>.
+        We offer a variety of web development and system administration
+        consulting services. We have experience managing a fleet of NixOS
+        servers using NixOps, running a series of custom services built on
+        various frameworks and languages, including Sails, Go, and Clojure. If
+        you are interested in talking to us about a potential project, please
+        send us an email at{' '}
+        <a href="mailto:sales@conduitim.pl">sales@conduitim.pl</a>.
       </p>
+      <Subheader>Portfolio coming soon.</Subheader>
     </Page>
   );
 }

@@ -8,6 +8,7 @@ import BasePage from '../components/BasePage';
 import Logo from '../components/Logo';
 import Footer from '../components/Footer';
 import Cover from '../components/Cover';
+import Subheader from '../components/Subheader';
 
 export const query = graphql`
   query {
@@ -40,19 +41,32 @@ export default function IndexPage({ data }) {
       />
       <div className="row">
         <div className="col-3"></div>
-        <AniLink
-          fade
-          to="/services"
-          className={classNames(
-            'btn',
-            'btn-outline-primary',
-            'btn-block',
-            'col-6',
-            styles.servicesButton,
-          )}
-        >
-          Services
-        </AniLink>
+        <div className="col-6">
+          <AniLink
+            fade
+            to="/services"
+            className={classNames(
+              'btn',
+              'btn-outline-primary',
+              'btn-block',
+              styles.button,
+            )}
+          >
+            Consulting Services
+          </AniLink>
+          <Subheader>Consumer Products</Subheader>
+          <a
+            href="https://hodgepodge.dev"
+            className={classNames(
+              'btn',
+              'btn-outline-primary',
+              'btn-block',
+            )}
+          >
+            Hodge Podge Hosting <br />
+            <small>Inexpensive server hosting</small>
+          </a>
+        </div>
         <div className="col-3"></div>
       </div>
       <Footer includeHCard />
