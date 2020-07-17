@@ -48,6 +48,7 @@ $font-family-sans-serif: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Se
 @import 'bootstrap/scss/_type';
 @import 'bootstrap/scss/_grid';
 @import 'bootstrap/scss/_buttons';
+@import 'bootstrap/scss/_card';
 
 html,
 body,
@@ -60,4 +61,10 @@ body,
 
 a {
   font-weight: bold;
+}
+
+blockquote {
+  padding-left: 1em;
+  border-left: 3px solid lighten($primary, 30%);
+  color: lighten($primary, 30%);
 }

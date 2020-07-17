@@ -43,7 +43,8 @@
     "prismjs": "^1.17.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-markdown": "^4.3.1"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",

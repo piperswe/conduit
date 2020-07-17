@@ -9,16 +9,17 @@ export interface PageProps {
   title: string;
   canonicalUrl?: string;
   children: ReactNode;
+  footer?: boolean;
 }
 
-export default function Page({ title, canonicalUrl, children }: PageProps) {
+export default function Page({ title, canonicalUrl, children, footer }: PageProps) {
   return (
     <BasePage title={title} canonicalUrl={canonicalUrl}>
       <AniLink fade to="/">
         <Logo />
       </AniLink>
       {children}
-      <Footer />
+      { footer && <Footer /> }
     </BasePage>
   );
 }

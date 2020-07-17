@@ -12,6 +12,19 @@ export interface BasePageProps {
   className?: string;
 }
 
+export interface ContainerProps {
+  className?: string;
+  children: ReactNode;
+}
+
+export function Container({ className, children }: ContainerProps) {
+  return (
+    <div className={classNames('container', styles.page, className)}>
+      { children }
+    </div>
+  );
+}
+
 export default function BasePage({
   title,
   canonicalUrl,
@@ -19,7 +32,7 @@ export default function BasePage({
   className,
 }: BasePageProps) {
   return (
-    <div className={classNames('container', styles.page, className)}>
+    <Container className={className}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{title ? title + ' - ' : ''}Conduit Implementations</title>
@@ -28,6 +41,6 @@ export default function BasePage({
         )}
       </Helmet>
       {children}
-    </div>
+    </Container>
   );
 }
