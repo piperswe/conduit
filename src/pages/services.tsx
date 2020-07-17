@@ -47,7 +47,7 @@ interface PortfolioItemDetails {
 
 function PortfolioItem({ item }: { item: PortfolioItemDetails }) {
   return (
-    <div className="col-6">
+    <div className="col-lg-6">
       <div className="card">
         { item.image &&
           <img
@@ -61,7 +61,7 @@ function PortfolioItem({ item }: { item: PortfolioItemDetails }) {
             <Markdown
               source={item.description} />
           </div>
-          { item.links && item.links.map(link => <a href={link.destination} className="card-link">{link.title}</a>)}
+          { item.links && item.links.map(link => <a key={link.destination} href={link.destination} className="card-link">{link.title}</a>)}
         </div>
       </div>
     </div>
@@ -71,9 +71,11 @@ function PortfolioItem({ item }: { item: PortfolioItemDetails }) {
 function Portfolio({ items }: { items: PortfolioItemDetails[] }) {
   return (
     <div className="row">
-      <div className="col-3"></div>
-      <div className="row col-6">
-        { items.map(item => <PortfolioItem item={item} />) }
+      <div className="col-12 col-lg-3"></div>
+      <div className="col-12 col-lg-6">
+        <div className="row">
+          { items.map(item => <PortfolioItem key={item.name} item={item} />) }
+        </div>
       </div>
     </div>
   );
@@ -118,7 +120,8 @@ the Hodge Podge Hosting website:
 
 It operates out of a leased cabinet in the Hurricane Electric Fremont 2
 datacenter, with hardware that is either fully owned by Conduit Implementations,
-or sent in by customers for colocation.
+or sent in by customers for colocation. The software is built on the stack
+mentioned above (Sails/Go/Clojure/etc. on NixOS).
     `,
     links: [
       {
