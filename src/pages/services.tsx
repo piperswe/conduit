@@ -14,9 +14,8 @@ export const query = graphql`
     hero: file(relativePath: { eq: "images/chris-ried-ieic5Tq8YMk-unsplash.jpg" }) {
       childImageSharp {
         fluid(
-          maxWidth: 3840
-          maxHeight: 480
-          srcSetBreakpoints: [640, 750, 1125, 1242, 1920, 2560, 3840]
+          maxWidth: 563
+          srcSetBreakpoints: [320, 375, 563]
           traceSVG: { color: "#594E52", optCurve: false, turdSize: 1 }
         ) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
