@@ -14,6 +14,7 @@ $container-max-widths: (
        url('../../static/fonts/hunter/hunter-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {

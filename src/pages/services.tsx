@@ -122,7 +122,8 @@ const portfolioItems: PortfolioItemDetails[] = [
 This website is built with [Gatsby](https://www.gatsbyjs.org) (a static site
 generator built on [React](https://reactjs.org) and
 [GraphQL](https://graphql.org)), which allows us to add neat dynamic and
-interactive pages while still using a static web host.
+interactive pages in the future while still using a static web host
+(specifically [Netlify](https://www.netlify.com)).
     `,
     links: [
       {
