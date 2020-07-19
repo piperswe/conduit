@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { graphql } from 'gatsby';
-import classNames from 'classnames';
 import Markdown from 'react-markdown';
+import Img, { FluidObject } from 'gatsby-image';
 
 import Page from '../components/Page';
 import Cover from '../components/Cover';
@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "images/chris-ried-ieic5Tq8YMk-unsplash.jpg" }) {
+    hero: file(relativePath: { eq: "images/chris-ried-ieic5Tq8YMk-unsplash.jpg" }) {
       childImageSharp {
         fluid(
           maxWidth: 3840
@@ -23,8 +23,38 @@ export const query = graphql`
         }
       }
     }
+    conduitHomepage: file(relativePath: { eq: "images/conduit-homepage.png" }) {
+      childImageSharp {
+        fluid(
+          maxWidth: 1920
+          srcSetBreakpoints: [320, 375, 563, 621, 960, 1280, 1920]
+          traceSVG: { color: "#594E52", optCurve: false, turdSize: 1 }
+        ) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    datacenter: file(relativePath: { eq: "images/datacenter.jpg" }) {
+      childImageSharp {
+        fluid(
+          maxWidth: 1920
+          srcSetBreakpoints: [320, 375, 563, 621, 960, 1280, 1920]
+          traceSVG: { color: "#594E52", optCurve: false, turdSize: 1 }
+        ) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
   }
 `;
+
+interface Image {
+  childImageSharp: {
+    fluid: FluidObject,
+  },
+}
+
+type QueryResult = { [key: string]: Image };
 
 interface PortfolioLink {
   title: string,
@@ -32,7 +62,7 @@ interface PortfolioLink {
 }
 
 interface PortfolioImage {
-  src: string,
+  id: string,
   title?: string,
   alt: string,
 }
@@ -45,13 +75,13 @@ interface PortfolioItemDetails {
   links?: PortfolioLink[],
 }
 
-function PortfolioItem({ item }: { item: PortfolioItemDetails }) {
+function PortfolioItem({ item, qr }: { item: PortfolioItemDetails, qr: QueryResult }) {
   return (
     <div className="col-lg-6">
       <div className="card">
         { item.image &&
-          <img
-            src={item.image.src}
+          <Img
+            fluid={qr[item.image.id].childImageSharp.fluid}
             className="card-img-top"
             alt={item.image.alt}
             title={item.image.title} /> }
@@ -68,13 +98,13 @@ function PortfolioItem({ item }: { item: PortfolioItemDetails }) {
   );
 }
 
-function Portfolio({ items }: { items: PortfolioItemDetails[] }) {
+function Portfolio({ items, qr }: { items: PortfolioItemDetails[], qr: QueryResult }) {
   return (
     <div className="row">
       <div className="col-12 col-lg-3"></div>
       <div className="col-12 col-lg-6">
         <div className="row">
-          { items.map(item => <PortfolioItem key={item.name} item={item} />) }
+          { items.map(item => <PortfolioItem key={item.name} item={item} qr={qr} />) }
         </div>
       </div>
     </div>
@@ -84,7 +114,7 @@ function Portfolio({ items }: { items: PortfolioItemDetails[] }) {
 const portfolioItems: PortfolioItemDetails[] = [
   {
     image: {
-      src: '/conduit-homepage.png',
+      id: 'conduitHomepage',
       alt: 'A screenshot of this website'
     },
     name: 'Conduit Implementations Website',
@@ -103,7 +133,7 @@ interactive pages while still using a static web host.
   },
   {
     image: {
-      src: '/datacenter.jpg',
+      id: 'datacenter',
       alt: 'A few servers racked up in our cabinet',
       title: 'This image was taken while we were still getting things set up,'
            + ' so please don\'t judge our cable management _too_ harshly',
@@ -137,7 +167,7 @@ export default function ServicesPage({ data }) {
     <>
       <Page title="Services" canonicalUrl="/services" footer={false}>
         <Cover
-          fluid={data.file.childImageSharp.fluid}
+          fluid={data.hero.childImageSharp.fluid}
           alt="A code snippet displayed on a computer monitor"
         />
         <p>
@@ -151,7 +181,7 @@ export default function ServicesPage({ data }) {
         </p>
         <Subheader>Portfolio</Subheader>
       </Page>
-      <Portfolio items={portfolioItems} />
+      <Portfolio items={portfolioItems} qr={data} />
       <Container>
         <Footer />
       </Container>
