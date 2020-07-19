@@ -26,8 +26,8 @@ export const query = graphql`
     conduitHomepage: file(relativePath: { eq: "images/conduit-homepage.png" }) {
       childImageSharp {
         fluid(
-          maxWidth: 1920
-          srcSetBreakpoints: [320, 375, 563, 621, 960, 1280, 1920]
+          maxWidth: 563
+          srcSetBreakpoints: [320, 375, 563]
           traceSVG: { color: "#594E52", optCurve: false, turdSize: 1 }
         ) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -37,8 +37,8 @@ export const query = graphql`
     datacenter: file(relativePath: { eq: "images/datacenter.jpg" }) {
       childImageSharp {
         fluid(
-          maxWidth: 1920
-          srcSetBreakpoints: [320, 375, 563, 621, 960, 1280, 1920]
+          maxWidth: 563
+          srcSetBreakpoints: [320, 375, 563]
           traceSVG: { color: "#594E52", optCurve: false, turdSize: 1 }
         ) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
