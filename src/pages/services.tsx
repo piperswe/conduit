@@ -15,6 +15,7 @@ export const query = graphql`
       childImageSharp {
         fluid(
           maxWidth: 563
+          maxHeight: 300
           srcSetBreakpoints: [320, 375, 563]
           traceSVG: { color: "#594E52", optCurve: false, turdSize: 1 }
         ) {
