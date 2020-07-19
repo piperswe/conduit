@@ -11,8 +11,8 @@ export default function Logo(props) {
       file(relativePath: { eq: "images/logo.png" }) {
         childImageSharp {
           fluid(
-            maxWidth: 960
-            srcSetBreakpoints: [160, 320, 640, 960]
+            maxWidth: 640
+            srcSetBreakpoints: [160, 320, 640]
             traceSVG: { color: "#594E52", optCurve: false, turdSize: 1 }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
