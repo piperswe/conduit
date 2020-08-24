@@ -11,7 +11,9 @@ import Footer from '../components/Footer';
 
 export const query = graphql`
   query {
-    hero: file(relativePath: { eq: "images/chris-ried-ieic5Tq8YMk-unsplash.jpg" }) {
+    hero: file(
+      relativePath: { eq: "images/chris-ried-ieic5Tq8YMk-unsplash.jpg" }
+    ) {
       childImageSharp {
         fluid(
           maxWidth: 563

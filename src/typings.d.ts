@@ -22,3 +22,19 @@ declare module 'gatsby-plugin-transition-link/AniLink' {
 
   export default class AniLink extends Component<GatsbyLinkProps<{}> & Props> {}
 }
+
+declare module '*.module.css' {
+  interface ClassNames {
+    [className: string]: string
+  }
+  const classNames: ClassNames;
+  export = classNames;
+}
+
+declare module '*.module.scss' {
+  interface ClassNames {
+    [className: string]: string
+  }
+  const classNames: ClassNames;
+  export = classNames;
+}

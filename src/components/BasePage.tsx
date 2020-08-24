@@ -32,15 +32,23 @@ export default function BasePage({
   className,
 }: BasePageProps) {
   return (
-    <Container className={className}>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>{title ? title + ' - ' : ''}Conduit Implementations</title>
-        {canonicalUrl && (
-          <link rel="canonical" href={'https://conduitim.pl' + canonicalUrl} />
-        )}
-      </Helmet>
-      {children}
-    </Container>
+      <Container className={className}>
+          <Helmet>
+              <meta charSet="utf-8" />
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150942311-1"></script>
+              <script>{`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+
+                  gtag('config', 'UA-150942311-1');
+              `}</script>
+              <title>{title ? title + ' - ' : ''}Conduit Implementations</title>
+              {canonicalUrl && (
+                  <link rel="canonical" href={'https://conduitim.pl' + canonicalUrl} />
+              )}
+          </Helmet>
+          {children}
+      </Container>
   );
 }
