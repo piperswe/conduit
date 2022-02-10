@@ -39,7 +39,7 @@
     "gatsby-transformer-remark": "^2.6.30",
     "gatsby-transformer-sharp": "^2.2.23",
     "gsap": "^3.4.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "prismjs": "^1.17.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
